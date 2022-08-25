@@ -5,9 +5,9 @@ on:
     branches:
       - main
 
-env:
-  REGION: eu-west-1
-  PROJECT_NAME: test-github
+# env:
+#   REGION: eu-west-1
+#   PROJECT_NAME: test-github
   
 permissions:
   id-token: write
@@ -23,6 +23,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::304314271295:role/githubActionsTestRole
+        aws-region: eu-west-1
         role-session-name: MySessionName
 #       with:
 #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_2 }}
@@ -36,4 +37,4 @@ jobs:
       # v1.0.3
       uses: aws-actions/aws-codebuild-run-build@v1
       with:
-        project-name: ${{ env.PROJECT_NAME }}
+        project-name: test-github
