@@ -13,7 +13,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Configure AWS Credentials
       # v1
       uses: aws-actions/configure-aws-credentials@cefc5912bc61e2b5a3b049c839fc283c7712d4e0
