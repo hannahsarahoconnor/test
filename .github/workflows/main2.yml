@@ -8,6 +8,10 @@ on:
 env:
   REGION: eu-west-1
   PROJECT_NAME: test-github
+  
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   deploy:
