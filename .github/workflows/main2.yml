@@ -3,7 +3,7 @@ name: Run Codebuild
 on:
   push
 
-# env:
+# env: test
 #   REGION: eu-west-1
 #   PROJECT_NAME: test-github
   
