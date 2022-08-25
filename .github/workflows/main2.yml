@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Configure AWS Credentials
       # v1
-      uses: aws-actions/configure-aws-credentials@cefc5912bc61e2b5a3b049c839fc283c7712d4e0
+      uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_2 }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY_2 }}
@@ -27,6 +27,6 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: Run CodeBuild
       # v1.0.3
-      uses: aws-actions/aws-codebuild-run-build@0a2ddc3a24e0f6b41d4a61635d87dcb2482c7b49
+      uses: aws-actions/aws-codebuild-run-build@v1
       with:
         project-name: ${{ env.PROJECT_NAME }}
