@@ -22,7 +22,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::304314271295:role/githubActionsTestRole
         aws-region: eu-west-1
-        role-session-name: MySessionName
+        role-session-name: githubActions
 #       with:
 #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_2 }}
 #         aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY_2 }}
