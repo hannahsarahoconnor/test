@@ -1,9 +1,7 @@
 name: Run Codebuild
 
 on:
-  push:
-    branches:
-      - main
+  push
 
 # env:
 #   REGION: eu-west-1
