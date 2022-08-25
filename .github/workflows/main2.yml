@@ -15,9 +15,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+#     - uses: actions/checkout@v3
+    - name: Git Clone
+      uses: actions/checkout@v3
+      with: 
+        ref: ${{ github.event.pull_request.head.sha }}
     - name: Configure AWS Credentials
-      # v1
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::304314271295:role/githubActionAssummedRole
@@ -27,10 +30,6 @@ jobs:
 #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_2 }}
 #         aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY_2 }}
 #         aws-region: ${{ env.REGION }}
-    - name: Git Clone
-      uses: actions/checkout@v3
-      with: 
-        ref: ${{ github.event.pull_request.head.sha }}
     - name: Run CodeBuild
       # v1.0.3
       uses: aws-actions/aws-codebuild-run-build@v1
